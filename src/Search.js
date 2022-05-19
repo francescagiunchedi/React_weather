@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import ReactAnimatedWeather from "react-animated-weather";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 export default function Search() {
   const [city, Setcity] = useState("");
@@ -29,21 +32,41 @@ export default function Search() {
   }
   let form = (
     <form className="Search_form" onSubmit={WeatherCall}>
-      <input type="search" placeholder="search city" onChange={updatecity} />
+      <input
+        type="search"
+        placeholder="search city"
+        onChange={updatecity}
+        className="form-label"
+      />
       <input type="button" value="Search" />
     </form>
   );
   if (load) {
     return (
       <div>
-        <div className="infoTemperature">
-          {form}
+        {form}
+        <div className="info-container">
           <ul>
-            <li>date</li>
+            <li>Monday 14:30</li>
+            <li>{weather.description}</li>
+          </ul>
+          <ul>
             <li>Humidity: {weather.humidity}%</li>
             <li>wind: {weather.wind}Km/h</li>
           </ul>
-          <h1>{Math.round(weather.temperarute)}°C</h1>
+        </div>
+        <div className="infoTemp">
+          <h1>
+            <strong>{Math.round(weather.temperarute)}</strong>
+            °c
+          </h1>
+          <ReactAnimatedWeather
+            className="weather-icon"
+            icon="CLEAR_DAY"
+            color="orange"
+            size={65}
+            animate={true}
+          />
         </div>
       </div>
     );

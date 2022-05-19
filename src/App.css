@@ -1,38 +1,57 @@
-.App {
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Search_form {
+  padding: 0;
+  margin: 0;
+}
+
+.BodyContainer {
+  margin: 3rem auto;
   text-align: center;
+  display: block;
+  padding: 2rem;
+  width: 50%;
+  border-radius: 1.5rem;
+  border: 2px solid hsl(0, 0%, 90%);
+  box-shadow: 2px 2px 8px 2px hsl(0, 0%, 95%);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.BodyContainer h1 {
+  font-size: 50px;
+  color: hsl(0, 0%, 25%);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.info-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 2rem 0;
+  justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.info-container ul {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  text-align: start;
+  color: hsl(0, 0%, 30%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.info-container .infoTemp {
+  margin: 0 auto;
+}
+.info-container.weather-icon {
+  margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+  .BodyContainer {
+    width: 90%;
+    font-size: 15px;
   }
-  to {
-    transform: rotate(360deg);
+  .Search_form :last-child {
+    margin-top: 10px;
+  }
+  .BodyContainer h1 {
+    font-size: 35px;
   }
 }
