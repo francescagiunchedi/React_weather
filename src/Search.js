@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./Search.css";
 
 export default function Search() {
   const [city, Setcity] = useState("");
@@ -31,14 +31,14 @@ export default function Search() {
     axios.get(url).then(ShowTemp);
   }
   let form = (
-    <form className="Search_form" onSubmit={WeatherCall}>
+    <form className="form-group" onSubmit={WeatherCall}>
       <input
         type="search"
         placeholder="search city"
         onChange={updatecity}
-        className="form-label"
+        className="form-control"
       />
-      <input type="button" value="Search" />
+      <input type="button" value="Search" className="btn btn-primary" />
     </form>
   );
   if (load) {

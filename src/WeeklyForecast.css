@@ -1,0 +1,15 @@
+.weekly-forecast {
+  display: flex;
+  margin-top: 2rem;
+}
+.weekly-forecast ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.weekly-forecast li {
+  text-align: center;
+  padding: 0.5rem;
+}
