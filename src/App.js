@@ -13,12 +13,15 @@ function App() {
       </div>
       <p className="footer">
         Code by{" "}
-        <a href="https://github.com/francescagiunchedi/React_weather">
+        <a href="https://gentle-ganache-e53c21.netlify.app/" target="_blank">
           {" "}
-          Francesca GiunchediGithub
+          Francesca Giunchedi
         </a>{" "}
         free on
-        <a href="https://github.com/francescagiunchedi/React_weather">
+        <a
+          href="https://github.com/francescagiunchedi/React_weather"
+          target="_blank"
+        >
           {" "}
           Github
         </a>
