@@ -1,6 +1,5 @@
 .weekly-forecast {
   display: flex;
-  margin-top: 2rem;
 }
 .weekly-forecast ul {
   margin: 0;

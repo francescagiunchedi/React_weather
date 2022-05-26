@@ -71,19 +71,6 @@ export default function WeeklyForecast() {
       temp: `${15}°`,
     },
     {
-      day: "Fri",
-      icon: (
-        <ReactAnimatedWeather
-          className="weather-icon"
-          icon="CLEAR_DAY"
-          color="orange"
-          size={30}
-          animate={true}
-        />
-      ),
-      temp: `${12}°`,
-    },
-    {
       day: "Sat",
       icon: (
         <ReactAnimatedWeather
@@ -98,14 +85,16 @@ export default function WeeklyForecast() {
     },
   ];
   return (
-    <div className="weekly-forecast">
+    <div className="weekly-forecast row">
       {weekDay.map(function (day, index) {
         return (
-          <ul key={index}>
-            <li>{day.day}</li>
-            <li>{day.icon}</li>
-            <li>{day.temp}</li>
-          </ul>
+          <div className="col-4 col-sm-4 col-md-2 ">
+            <ul key={index} className="pt-4">
+              <li>{day.day}</li>
+              <li>{day.icon}</li>
+              <li>{day.temp}</li>
+            </ul>
+          </div>
         );
       })}
     </div>
