@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import ReactAnimatedWeather from "react-animated-weather";
 import "bootstrap/dist/css/bootstrap.min.css";
+import FormattedDate from "./FormattedDate";
 import "./Search.css";
 
 export default function Search() {
@@ -17,6 +17,7 @@ export default function Search() {
   function ShowTemp(response) {
     setload(true);
     Setweather({
+      date: new Date(response.data.dt * 1000),
       temperarute: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -47,7 +48,9 @@ export default function Search() {
         {form}
         <div className="info-container">
           <ul>
-            <li>Monday 14:30</li>
+            <li>
+              <FormattedDate date={weather.date} />
+            </li>
             <li>{weather.description}</li>
           </ul>
           <ul>
@@ -60,17 +63,28 @@ export default function Search() {
             <strong>{Math.round(weather.temperarute)}</strong>
             °c
           </h1>
-          <ReactAnimatedWeather
-            className="weather-icon"
-            icon="CLEAR_DAY"
-            color="orange"
-            size={65}
-            animate={true}
-          />
         </div>
       </div>
     );
   } else {
-    return form;
+    return (
+      <div>
+        {form}
+        <div className="info-container">
+          <ul>
+            <li>
+              <FormattedDate date={weather.date} />
+            </li>
+          </ul>
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div className="infoTemp">
+          <h1>Type a city</h1>
+        </div>
+      </div>
+    );
   }
 }

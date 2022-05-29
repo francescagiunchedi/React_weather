@@ -1,6 +1,5 @@
 import "./App.css";
 import Search from "./Search";
-import WeeklyForecast from "./WeeklyForecast";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -9,8 +8,6 @@ function App() {
       <div className="body-container">
         <div className="weather-box">
           <Search />
-
-          <WeeklyForecast />
         </div>
         <p className="footer">
           Code by{" "}
