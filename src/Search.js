@@ -15,7 +15,6 @@ export default function Search() {
   }
 
   function ShowTemp(response) {
-    setload(true);
     Setweather({
       date: new Date(response.data.dt * 1000),
       temperarute: response.data.main.temp,
@@ -23,6 +22,7 @@ export default function Search() {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
     });
+    setload(true);
   }
 
   function WeatherCall(event) {
@@ -72,9 +72,8 @@ export default function Search() {
         {form}
         <div className="info-container">
           <ul>
-            <li>
-              <FormattedDate date={weather.date} />
-            </li>
+            <li></li>
+            <li></li>
           </ul>
           <ul>
             <li></li>
