@@ -7,7 +7,7 @@ function App() {
     <div className="container">
       <div className="body-container">
         <div className="weather-box">
-          <Search />
+          <Search cityDefault="Milan" />
         </div>
         <p className="footer">
           Code by{" "}
