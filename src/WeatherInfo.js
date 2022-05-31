@@ -9,7 +9,7 @@ export default function propsInfo(props) {
       <div className="info-container">
         <ul>
           <li>
-            <h1>{props.city}</h1>
+            <h1>{props.data.city}</h1>
           </li>
           <li>
             <FormattedDate date={props.data.date} />

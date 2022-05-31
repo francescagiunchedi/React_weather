@@ -7,12 +7,11 @@ import "./Search.css";
 
 export default function Search(props) {
   const [city, setcity] = useState(props.cityDefault);
-  const [weather, Setweather] = useState({});
-  const [load, setload] = useState(false);
+  const [weather, Setweather] = useState({ load: false });
 
   function ShowTemp(response) {
-    console.log(response.data);
     Setweather({
+      load: true,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       temperarute: response.data.main.temp,
@@ -21,7 +20,7 @@ export default function Search(props) {
       description: response.data.weather[0].description,
     });
 
-    setload(true);
+    console.log(response.data);
   }
 
   function search() {
@@ -31,14 +30,13 @@ export default function Search(props) {
   }
 
   function HandleSubmit(event) {
-    event.preventDefaul();
+    event.preventDefault();
     Search();
   }
 
   function HandleCityChange(event) {
     setcity(event.target.value);
   }
-
   let form = (
     <form className="form-group" onSubmit={HandleSubmit}>
       <input
@@ -47,11 +45,11 @@ export default function Search(props) {
         className="form-control"
         onChange={HandleCityChange}
       />
-      <input type="button" value="Search" className="btn btn-primary" />
+      <input type="submit" value="Search" className="btn btn-primary" />
     </form>
   );
 
-  if (load) {
+  if (weather.load) {
     return (
       <div>
         {form}
