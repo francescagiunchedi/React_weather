@@ -18,6 +18,7 @@ export default function Search(props) {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
 
     console.log(response.data);
@@ -31,7 +32,7 @@ export default function Search(props) {
 
   function HandleSubmit(event) {
     event.preventDefault();
-    Search();
+    search();
   }
 
   function HandleCityChange(event) {
