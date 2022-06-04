@@ -17,8 +17,8 @@ export default function Search(props) {
       temperarute: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      description: response.data.weather[0].description,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      description: response.data.weather[0].main,
+      icon: response.data.weather[0].icon,
     });
 
     console.log(response.data);

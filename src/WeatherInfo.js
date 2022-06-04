@@ -1,8 +1,8 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Search.css";
-
 export default function propsInfo(props) {
   return (
     <div>
@@ -24,7 +24,7 @@ export default function propsInfo(props) {
         </ul>
       </div>
       <div className="infoTemp">
-        <img src={props.data.icon} alt={props.data.description} />
+        <WeatherIcon code={props.data.icon}/>
         <h1>
           <strong>{Math.round(props.data.temperarute)}</strong>
           °c
