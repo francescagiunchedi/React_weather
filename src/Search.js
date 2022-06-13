@@ -4,6 +4,7 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import WeatherInfo from "./WeatherInfo";
 import "./Search.css";
+import Forecast from "./Forecast";
 
 export default function Search(props) {
   const [city, setcity] = useState(props.cityDefault);
@@ -55,6 +56,7 @@ export default function Search(props) {
       <div>
         {form}
         <WeatherInfo data={weather} />
+        <Forecast />
       </div>
     );
   } else {

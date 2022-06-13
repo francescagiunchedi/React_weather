@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import TemperaruteConversion from "./TemperaruteConversion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Search.css";
 export default function propsInfo(props) {
@@ -24,11 +25,12 @@ export default function propsInfo(props) {
         </ul>
       </div>
       <div className="infoTemp">
-        <WeatherIcon code={props.data.icon}/>
-        <h1>
-          <strong>{Math.round(props.data.temperarute)}</strong>
-          °c
-        </h1>
+        <div>
+          <WeatherIcon code={props.data.icon} size={50} />
+        </div>
+        <div className="unit-temperature">
+          <TemperaruteConversion celsius={props.data.temperarute} />
+        </div>
       </div>
     </div>
   );

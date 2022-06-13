@@ -1,0 +1,12 @@
+.Forecast {
+  text-align: center;
+}
+.temp .temp {
+  padding: 0.2rem;
+}
+.temp .temp-min {
+  opacity: 0.6;
+}
+.temp span {
+  padding: 0.2rem;
+}
