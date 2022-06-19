@@ -1,7 +1,6 @@
 import "./App.css";
 import Search from "./Search";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Forecast from "./Forecast";
 
 function App() {
   return (
@@ -12,7 +11,11 @@ function App() {
         </div>
         <p className="footer">
           Code by{" "}
-          <a href="https://gentle-ganache-e53c21.netlify.app/" target="_blank">
+          <a
+            href="https://gentle-ganache-e53c21.netlify.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
             {" "}
             Francesca Giunchedi
           </a>{" "}
@@ -20,6 +23,7 @@ function App() {
           <a
             href="https://github.com/francescagiunchedi/React_weather"
             target="_blank"
+            rel="noreferrer"
           >
             {" "}
             Github

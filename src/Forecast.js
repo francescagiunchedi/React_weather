@@ -6,7 +6,7 @@ import Axios from "axios";
 
 import "./Forecast.css";
 
-export default function (props) {
+export default function Forecast (props) {
   let [loaded, setloaded] = useState(false);
   let [Forecast, setForecast] = useState(null);
 
