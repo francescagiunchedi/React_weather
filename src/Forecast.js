@@ -10,9 +10,9 @@ export default function (props) {
   let [loaded, setloaded] = useState(false);
   let [Forecast, setForecast] = useState(null);
 
-    useEffect(() => {
-      setloaded(false);
-    }, [props.coordinates]);
+  useEffect(() => {
+    setloaded(false);
+  }, [props.coordinates]);
 
   function handleresponse(response) {
     setForecast(response.data.daily);
@@ -31,6 +31,8 @@ export default function (props) {
                   <ForecastDay day={dailyforecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
