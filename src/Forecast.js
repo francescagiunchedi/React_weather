@@ -6,7 +6,7 @@ import Axios from "axios";
 
 import "./Forecast.css";
 
-export default function Forecast (props) {
+export default function Forecast(props) {
   let [loaded, setloaded] = useState(false);
   let [Forecast, setForecast] = useState(null);
 
@@ -17,6 +17,13 @@ export default function Forecast (props) {
   function handleresponse(response) {
     setForecast(response.data.daily);
     setloaded(true);
+  }
+  function load() {
+    const key = `4ff86370e362a341be667316345b71fc`;
+    let lat = props.coordinates.lat;
+    let lon = props.coordinates.lon;
+    const api = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&units=metric`;
+    Axios.get(api).then(handleresponse);
   }
 
   if (loaded) {
@@ -39,11 +46,7 @@ export default function Forecast (props) {
       </div>
     );
   } else {
-    const key = `4ff86370e362a341be667316345b71fc`;
-    let lat = props.coordinates.lat;
-    let lon = props.coordinates.lon;
-    const api = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&units=metric`;
-    Axios.get(api).then(handleresponse);
+    load();
     return null;
   }
 }
